@@ -24,17 +24,18 @@ applications)
 → It simply sends the data and server stores it on the file system.
 → This means that even if the user has not clicked on start session button, Chrome plugin would simply connect to WebSocket and send data.
 
-## Take Home Assignment 2
 ## Problem statement
 💡 1. The problem statement defined here are real world problems we are facing, and this assignment is to give you a feel of the kind of problems you would be solving, if/when you join. There are some concepts that
 would be outside of what you have worked in the past - but that’s the idea of this assignment. We have not implemented these solutions ourselves yet (but we have some ideas on how to)
 2. That is totally okay if you are not able to solve all of them. The idea is not to see a working solution, but to discuss the approaches you took, what you learnt in trying to solve.
+
 
 # Part 1: Allow multiple URL’s to be stored and retrieved
 Look at the node.js code. It only allows to show one URL.
 1. Can you expand on the code in node.js (this exercise does not require any changes to Chrome plugin) so that every URL is saved in its own file.
 2. Make changes to the html page , so that by passing a query parameter like ?id=1 can show you the first URL visited. Passing ?id=2 shows the second URL visited
 3. As part of this exercise, assume that the user would always open a new tab with a new URL. You can safely assume that the URL’s we recieve on the backend are always unique
+
 
 # Part 2: Assign sessionId to the data sent by Chrome Plugin
 TLDR; We want to associate the payload data sent by Chrome, to be associated with a sessionId. This sessionId is created on the server (when the user clicks on start session). The chrome plugin should send a sessionId field with every
@@ -48,13 +49,13 @@ payload.
 We don’t expect you to have worked in Chrome plugin before, so let us give you some pointers:
 1. You might have to get familiarized to Chrome plugin workings: What is a service worker, and what is a content script. How do they talk to one another
 2. Read about the advantages of webSocket server over http server, and why we chose webSocket server here. And how that. would be helpful
-How can you test it (You might have to change in the code to test it as well)
 
-## Take Home Assignment 3
+How can you test it (You might have to change in the code to test it as well)
 1. We have also added a html page http://localhost:3000 which connects to the webSocket. You can modify that page to pass in sessionId to the node.js server
 Alternatively, you can use a tool like Postman to connect to this WebSocket and send data
 2. Passing in a new sessionId simulates the case when a user has clicked on start session button
 3. To simulate the use case of user clicking on stop session button, send NULL OR -1 sessionId
+
 
 #Part 3: Check why the rrweb video does not work on existing tab, on changing sessionId. 
 This might be a more challenging problem to solve, and would require you to understand some level of details of Chrome Plugin, as well as rrweb.There is a bug that would happen, when we allow sessionId to change on an existing webpage.
