@@ -51,7 +51,7 @@ const startWebSocketServer = () => {
 
 
 let lastUrl = null;
-let id = 0;
+let id = 1;
 
 const processPayload = (payload) => {
   const { type, url, data } = payload;
@@ -64,10 +64,10 @@ const processPayload = (payload) => {
   const jsonData = JSON.parse(data);
   console.log("Id : ", id);
   let dataFilePath;
-  if (url !== lastUrl) {   
-    id++;
+  if (url !== lastUrl) {    
     dataFilePath = path.join(dataFolderName, id.toString());
-    fs.writeJsonSync(dataFilePath, jsonData); // This would empty the files if there's already content   
+    fs.writeJsonSync(dataFilePath, jsonData); // This would empty the files if there's already content  
+    id++;
   } 
   else {
     // Simply append to the same file;  No change
