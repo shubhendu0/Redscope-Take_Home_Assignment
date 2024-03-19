@@ -79,3 +79,12 @@ pointers:
 
 # Bonus Points, Part 4: Show sessionId in options page
 If you can show the sessionId in Chrome plugin, in the options page. Options page is the one that opens when user clicks on the Chrome plugin icon
+
+
+
+<------------------------------------------------------------------------------------------------------------------------->
+1. For Part-1, in web-socket.js we will make changes such that the data is stored in the directory according to the id assigned and in http_server.js file, we will fetch the query parameter "id" from the url and show the results based on it.
+
+2. For Part-2, we will take a variable "sessionId" and assign its initial value as null. If there is no session passed we will create a session id and pass it in payload and change sessionId value for next session.
+
+3. For Part-3, we will make changes in the code accordingly to start/stop session and change the current sessionId.
